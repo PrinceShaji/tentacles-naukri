@@ -8,6 +8,9 @@ pylint = "*"
 
 [packages]
 requests = "*"
+tqdm = "*"
+pandas = "*"
+bs4 = "*"
 
 [requires]
 python_version = "3.6"
