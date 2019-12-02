@@ -18,6 +18,6 @@
 - The file will be saved as city_name_date.csv
   
 ### Ignored files
-- settings.py is ignored. So create a file settings.py in the roor folder and add the browser headers.
+- ~~settings.py is ignored. So create a file settings.py in the roor folder and add the browser headers.~~
 - test.py & /test is meant to test out code snippets.
 
