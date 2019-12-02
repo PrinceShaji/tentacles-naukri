@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from sys import argv
 import requests
 from bs4 import BeautifulSoup
 import multiprocessing
@@ -9,15 +10,13 @@ from time import strftime, gmtime, time, sleep
 import pandas as pd
 from datetime import date
 import tqdm
-from termcolor import colored
-
 
 class multi_scraper:
     """ Scraper class. """
 
     def __init__(self):
         """ """
-        self.city = input('Enter city name:\n>>> ').title()
+        self.city = 'Bangalore' # Default.
         self.headers = self.make_header(self.city)
         self.query = tentacles_settings.query_parameters.format(self.city)
         self.total_jobs = None
@@ -95,8 +94,15 @@ class multi_scraper:
 
     
 if __name__ == "__main__":
-    
+    # Creating the scraper object.
     tentacles = multi_scraper()
+
+    # Parsing argv
+    if len(argv) > 1:
+        tentacles.city = argv[1].title()
+    else:
+        tentacles.city = input("Enter city name: ").title()
+
     total_pages = tuple(i for i in range(1, tentacles.total_pages + 1))
     print(f'Total jobs: {tentacles.total_jobs} \nTotal pages to scrape: {tentacles.total_pages}\n')
     
@@ -133,4 +139,4 @@ if __name__ == "__main__":
     df3 = df2.drop_duplicates()
     df3.to_csv(f"{tentacles.city}_{date.today()}.csv")
 
-    print('Completed writing to file!')
+    print('Completed writing to file!\n')
