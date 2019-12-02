@@ -15,7 +15,7 @@
 - Activate venv by ``` pipenv shell ```.
 - Run ``` python tentacle_naukri.py <City Name>```.
 - If you didn't enter a city name, you will be prompted to enter one.
-- The scraped data will be saved as a csv file in the format city_name_date.csv
+- The scraped data will be saved as a csv file in the format ``` city_name_date.csv ```
 
 ## Available Cities
 - For list available cities, refer ``` complete_city_list.csv ```
