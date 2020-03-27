@@ -1,6 +1,7 @@
+## Deprecated version. No longer works with the new website.
+
 # Tentacles - Naukri
   A scraper for naukri that is capable of multiprocessing the task. The scraper also has a progress bar. So no more guessing the scrape status.
-
 
 ## Requirements
 - ~~Create a file ``` tentacles_naukri.py ``` and add the browser heasers and query parameters.~~
